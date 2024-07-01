@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://q2bgq6alnlpo"]
+
+[ext_resource type="Shader" path="res://shaders/uber_post.gdshader" id="1_7h2uu"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_7h2uu")
+shader_parameter/VIRTUAL_HEIGHT = 180.0
+shader_parameter/SKYBOX_COLOR_TOP = Color(0.10748, 0.10748, 0.10748, 1)
+shader_parameter/SKYBOX_COLOR_BTM = Color(0, 0, 0, 1)
+shader_parameter/OUTLINE_COLOR = Color(0, 0, 0, 1)
+shader_parameter/OUTLINE_STRENGTH = 500.0
+shader_parameter/OUTLINE_WIDTH = 4.0
+shader_parameter/OUTLINE_DEPTH = 0.25
+shader_parameter/OUTLINE_FALLOFF = 1.0
+shader_parameter/COLOR_STEP = 0.1
+shader_parameter/COLOR_FALLOFF = 2.0

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cer0aofvac5t5"]
+
+[ext_resource type="Material" uid="uid://q2bgq6alnlpo" path="res://shaders/uber_post_settings.tres" id="1_sk167"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_25ctm"]
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="SampleScene" type="Node3D"]
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 1.21328, 1.77351, 1.49744)
+
+[node name="Post_UberPost" type="MeshInstance3D" parent="Camera"]
+transform = Transform3D(0.707107, 0, -0.707107, -0.5, 0.707107, -0.5, 0.5, 0.707107, 0.5, 0.200935, 0.101303, -2.60942)
+material_override = ExtResource("1_sk167")
+extra_cull_margin = 16000.0
+mesh = SubResource("QuadMesh_25ctm")
+skeleton = NodePath("../..")
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473333, -0.358286, -0.534675)
+size = Vector3(3.2749, 1, 3.67017)
+
+[node name="Cube" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.440202, 0.319868, 0.0413628)
+
+[node name="Sphere" type="CSGSphere3D" parent="Level"]
+transform = Transform3D(0.728773, 0, 0, 0, 0.612637, 0, 0, 0, 0.670767, 0.5676, 0.380902, -1.1119)
+
+[node name="Light_Green" type="OmniLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.120506, 1.02924, 0.837952)
+light_color = Color(3.51354e-06, 0.765996, 0.206296, 1)
+light_energy = 3.101
+
+[node name="Light_Magenta" type="OmniLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.431211, 0.540988, -0.42206)
+light_color = Color(1, 0.156863, 1, 1)
+light_energy = 3.101
+
+[node name="Light_Cyan" type="DirectionalLight3D" parent="Level"]
+transform = Transform3D(0.820656, -0.397032, 0.410962, -0.0394471, 0.678112, 0.733899, -0.57006, -0.61849, 0.540835, -0.548376, 0.766229, 0.583885)
+light_color = Color(0.634318, 0.931317, 0.927361, 1)
